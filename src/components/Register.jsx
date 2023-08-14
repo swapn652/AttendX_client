@@ -33,19 +33,19 @@ export const Register = () => {
       formDataImage2.append('imageName', '2');
 
       const [uploadResponse1, uploadResponse2] = await Promise.all([
-        axios.post('http://localhost:8000/uploadImage', formDataImage1, {
+        axios.post('https://itchy-sunglasses-crow.cyclic.app/uploadImage', formDataImage1, {
           headers: {
             'Content-Type': 'multipart/form-data'
           }
         }),
-        axios.post('http://localhost:8000/uploadImage', formDataImage2, {
+        axios.post('https://itchy-sunglasses-crow.cyclic.app/uploadImage', formDataImage2, {
           headers: {
             'Content-Type': 'multipart/form-data'
           }
         })
       ]);
 
-      const response = await axios.post('http://localhost:8000/addStudent', {
+      const response = await axios.post('https://itchy-sunglasses-crow.cyclic.app/addStudent', {
         name,
         password
       });
