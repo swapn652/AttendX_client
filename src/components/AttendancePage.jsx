@@ -11,7 +11,7 @@ const AttendancePage = ({ studentRollId }) => {
   useEffect(() => {
     const fetchAttendanceData = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/getAttendance/${studentRollId}`);
+        const response = await axios.get(`https://itchy-sunglasses-crow.cyclic.app/getAttendance/${studentRollId}`);
         setAttendanceData(response.data.attendance);
       } catch (error) {
         console.error(error);
