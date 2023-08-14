@@ -84,7 +84,7 @@ function Webcam() {
 
             if (result.label !== 'unknown') {
               try {
-                const response = await axios.post('http://localhost:8000/markAttendance', {
+                const response = await axios.post('https://itchy-sunglasses-crow.cyclic.app/markAttendance', {
                   name: result.label,
                 });
 
@@ -107,7 +107,7 @@ function Webcam() {
 
   async function fetchStudentNames() {
     try {
-      const response = await axios.get('http://localhost:8000/getAllStudentNames');
+      const response = await axios.get('https://itchy-sunglasses-crow.cyclic.app/getAllStudentNames');
       const studentNames = response.data.studentNames;
       return studentNames;
     } catch (error) {
@@ -123,7 +123,7 @@ function Webcam() {
     await Promise.all(
       fetchedLabels.map(async (label) => {
         try {
-          const response = await axios.get(`http://localhost:8000/getCloudinaryImages/${label}/2`);
+          const response = await axios.get(`https://itchy-sunglasses-crow.cyclic.app/getCloudinaryImages/${label}/2`);
           const imageUrls = response.data.images;
 
           for (const imgUrl of imageUrls) {
